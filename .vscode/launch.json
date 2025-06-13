@@ -1,0 +1,176 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "executable 'stacks-node'",
+      "cargo": {
+        "args": [
+          "build",
+          "--bin=stacks-node"
+        ],
+        "filter": {
+          "kind": "bin"
+        }
+      },
+      "args": [
+        "mockamoto"
+      ],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "executable 'clarity-cli'",
+      "cargo": {
+        "args": [
+          "build",
+          "--bin=clarity-cli",
+          "--package=stackslib"
+        ],
+        "filter": {
+          "name": "clarity-cli",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "executable 'blockstack-cli'",
+      "cargo": {
+        "args": [
+          "build",
+          "--bin=blockstack-cli",
+          "--package=stackslib"
+        ],
+        "filter": {
+          "name": "blockstack-cli",
+          "kind": "bin"
+        }
+      },
+      "args": [
+        "generate-sk"
+      ],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "executable 'stacks-node' -- mocknet",
+      "cargo": {
+        "args": [
+          "build",
+          "--bin=stacks-node",
+          "--package=stacks-node"
+        ],
+        "filter": {
+          "name": "stacks-node",
+          "kind": "bin"
+        }
+      },
+      "args": [
+        "mocknet"
+      ],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "unit tests in library 'stackslib'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--lib",
+          "--package=stackslib"
+        ],
+        "filter": {
+          "name": "stackslib",
+          "kind": "lib"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "unit tests in executable 'stacks-inspect'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=stacks-inspect",
+          "--package=stackslib"
+        ],
+        "filter": {
+          "name": "stacks-inspect",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "unit tests in executable 'clarity-cli'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=clarity-cli",
+          "--package=stackslib"
+        ],
+        "filter": {
+          "name": "clarity-cli",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "unit tests in executable 'blockstack-cli'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=blockstack-cli",
+          "--package=stackslib"
+        ],
+        "filter": {
+          "name": "blockstack-cli",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "unit tests in executable 'stacks-node'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=stacks-node",
+          "--package=stacks-node"
+        ],
+        "filter": {
+          "name": "stacks-node",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

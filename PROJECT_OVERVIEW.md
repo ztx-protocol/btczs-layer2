@@ -1,32 +1,75 @@
-# BTCZS Project - BitcoinZ Stacks Layer 2
+# 🚀 **BTCZS LAYER 2 - BITCOINZ PROOF OF TRANSFER**
 
-## Project Status: PLANNING PHASE
-**Last Updated**: January 13, 2025  
-**Current Phase**: Phase 1 - Foundation and Setup  
-**Progress**: 0% - Project Initialization  
+> **⚠️ REPOSITORY RESTRUCTURED**: This repository has been restructured for optimal development. The main BTCZS implementation is now at the root level for easier access and contribution.
 
-## Project Overview
-Creating a Stacks-like layer 2 solution for BitcoinZ (BTCZ) by forking and adapting the Stacks blockchain architecture. This will enable smart contracts and DeFi functionality on top of BitcoinZ while maintaining security through the BTCZ network.
+> A native Layer 2 solution for BitcoinZ, enabling smart contracts and DeFi through Proof of Transfer (PoX)
 
-## Key Components
-- **BTCZS Chain**: Layer 2 blockchain for BitcoinZ
-- **Proof of Transfer (PoX)**: Consensus mechanism adapted for BTCZ
-- **Clarity Smart Contracts**: Programming layer with BTCZ integration
-- **sBTCZ Peg**: BitcoinZ bridge mechanism (1:1 peg)
-- **BTCZS Token**: Native layer 2 token (21M total supply)
+## 🚀 Project Overview
 
-## Technical Architecture
+BTCZS (BitcoinZ Stacks) is a layer 2 blockchain that brings smart contract functionality to BitcoinZ without modifying the base layer. Built by forking and adapting the Stacks blockchain architecture, BTCZS enables:
+
+- **Smart Contracts** via Clarity language with BTCZ integration
+- **DeFi Applications** with native BTCZ support
+- **sBTCZ Peg** for seamless BTCZ ↔ sBTCZ conversion
+- **Proof of Transfer** consensus secured by BitcoinZ
+
+## 📊 Current Status
+
+**Phase**: Foundation & Setup (Week 1 of 24)  
+**Progress**: 5% Complete  
+**Target Launch**: July 2025  
+
 ```
-┌─────────────────┐    ┌─────────────────┐
-│   BTCZS Layer   │    │  BitcoinZ L1    │
-│                 │    │                 │
-│ Smart Contracts │◄──►│  Burn Txs       │
-│ sBTCZ Tokens    │    │  Block Headers  │
-│ DeFi Apps       │    │  Security       │
-└─────────────────┘    └─────────────────┘
+Phase 1: Foundation & Setup     [██░░░░░░░░] 20%
+Phase 2: Core Protocol          [░░░░░░░░░░]  0%
+Phase 3: Token Economics        [░░░░░░░░░░]  0%
+Phase 4: Development Tools      [░░░░░░░░░░]  0%
+Phase 5: Testing & Security     [░░░░░░░░░░]  0%
+Phase 6: Launch Preparation     [░░░░░░░░░░]  0%
 ```
 
-## Repository Structure
+## 🏗️ Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    BTCZS Layer 2                            │
+├─────────────────────────────────────────────────────────────┤
+│  Smart Contracts (Clarity)  │  sBTCZ Peg  │  DeFi Apps     │
+├─────────────────────────────────────────────────────────────┤
+│  BTCZS Consensus (PoX)      │  Block Production & Validation │
+├─────────────────────────────────────────────────────────────┤
+│  BitcoinZ Integration Layer │  RPC Client │  Block Indexer  │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    BitcoinZ Layer 1                         │
+│  Burn Transactions  │  Block Headers  │  Security Model     │
+└─────────────────────────────────────────────────────────────┘
+```
+
+## 🎯 Key Features
+
+### 🔗 BitcoinZ Integration
+- **Native BTCZ Support**: Direct integration with BitcoinZ blockchain
+- **Burn-to-Mine**: Proof of Transfer consensus using BTCZ
+- **Block Anchoring**: Every BTCZS block anchored to BTCZ
+- **State Reading**: Smart contracts can read BTCZ state
+
+### 💰 Token Economics
+- **BTCZS Token**: 21M total supply, halving every 4 years
+- **sBTCZ Peg**: 1:1 pegged BitcoinZ for DeFi use
+- **Mining Rewards**: 1000 BTCZS initial block reward
+- **Gas Fees**: Payable in BTCZS or sBTCZ
+
+### 🔒 Security Model
+- **Bitcoin-level Security**: Inherits BTCZ PoW security
+- **Threshold Signatures**: Multi-sig peg protection
+- **Formal Verification**: Clarity smart contracts
+- **Audit Ready**: Security-first development
+
+## 📁 Repository Structure
+
 ```
 btczs-core/                 # Main blockchain implementation
 ├── src/
@@ -36,45 +79,136 @@ btczs-core/                 # Main blockchain implementation
 ├── clarity/contracts/sbtcz/ # sBTCZ peg contracts
 └── testnet/                 # Testing infrastructure
 
-btczs-api/                  # Blockchain API
-btczs-explorer/             # Block explorer
-btczs-wallet-sdk/           # Wallet integration
+docs/                       # Project documentation
+├── PROJECT_OVERVIEW.md     # High-level project info
+├── PHASE_TRACKER.md        # Development progress
+├── TECHNICAL_SPECIFICATIONS.md # Technical details
+├── DEVELOPMENT_ROADMAP.md  # Timeline and milestones
+└── STATUS_TRACKER.md       # Current status
 ```
 
-## Development Timeline
-- **Phase 1**: Foundation & Setup (Week 1-2) - **CURRENT**
-- **Phase 2**: Core Protocol (Week 3-8)
-- **Phase 3**: Token Economics (Week 9-12)
-- **Phase 4**: Dev Tools (Week 13-16)
-- **Phase 5**: Testing (Week 17-20)
-- **Phase 6**: Launch (Week 21-24)
+## 🛠️ Development Setup
 
-## Success Metrics
-- Network uptime: >99.9%
-- Active addresses: >1000 within 6 months
-- Total Value Locked: >10,000 BTCZ equivalent
-- Smart contracts: >100 deployed
+### Prerequisites
+- Rust 1.70+
+- Node.js 18+
+- BitcoinZ Core node
+- Docker (optional)
 
-## Team Requirements
-- 2-3 Rust developers (blockchain core)
-- 1-2 Frontend developers (tools)
-- 1 DevOps engineer
-- 1 Security auditor (part-time)
+### Quick Start
+```bash
+# Clone the repository (when available)
+git clone https://github.com/your-org/btczs-core
+cd btczs-core
 
-## Budget Estimate
-- Development: $200K-$300K
-- Infrastructure: $50K-$100K/year
-- Security audit: $50K-$100K
-- **Total Year 1**: $300K-$500K
+# Install dependencies
+cargo build
 
-## Next Actions
-1. ✅ Create detailed technical plan
-2. ✅ Set up project documentation
-3. ⏳ Fork Stacks repository
-4. ⏳ Set up development environment
-5. ⏳ Begin Phase 1 implementation
+# Run tests
+cargo test
 
-## Contact & Resources
-- **Stacks Core**: https://github.com/stacks-network/stacks-core
-- **BitcoinZ**: https://github.com/btcz/bitcoinz
-- **Documentation**: https://docs.stacks.co/
+# Start development node
+cargo run -- start --config testnet.toml
+```
+
+## 📋 Development Phases
+
+### Phase 1: Foundation & Setup (Week 1-2) ✅ 20%
+- [x] Project documentation
+- [ ] Repository setup
+- [ ] Development environment
+- [ ] BTCZ integration research
+
+### Phase 2: Core Protocol (Week 3-8) ⏳ 0%
+- [ ] Burnchain abstraction layer
+- [ ] RPC client adaptation
+- [ ] Proof of Transfer modification
+- [ ] Block production & validation
+
+### Phase 3: Token Economics (Week 9-12) ⏸️ 0%
+- [ ] BTCZS token implementation
+- [ ] sBTCZ peg design
+- [ ] Signer network
+- [ ] Economic model validation
+
+### Phase 4: Development Tools (Week 13-16) ⏸️ 0%
+- [ ] CLI tools
+- [ ] Blockchain API
+- [ ] Block explorer
+- [ ] Wallet SDK
+
+### Phase 5: Testing & Security (Week 17-20) ⏸️ 0%
+- [ ] Comprehensive testing
+- [ ] Testnet deployment
+- [ ] Security audit
+- [ ] Performance optimization
+
+### Phase 6: Launch Preparation (Week 21-24) ⏸️ 0%
+- [ ] Documentation completion
+- [ ] Community preparation
+- [ ] Mainnet deployment
+- [ ] Launch coordination
+
+## 🎯 Milestones
+
+- **Week 2**: Development environment ready
+- **Week 8**: Core protocol complete
+- **Week 12**: Token economics implemented
+- **Week 16**: Development tools ready
+- **Week 20**: Testing complete
+- **Week 24**: Mainnet launch
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our contributing guidelines:
+
+1. **Fork** the repository
+2. **Create** a feature branch
+3. **Commit** your changes
+4. **Push** to the branch
+5. **Create** a Pull Request
+
+### Development Guidelines
+- Follow Rust best practices
+- Write comprehensive tests
+- Update documentation
+- Follow security guidelines
+
+## 📚 Documentation
+
+- [Project Overview](PROJECT_OVERVIEW.md) - High-level project information
+- [Technical Specifications](TECHNICAL_SPECIFICATIONS.md) - Detailed technical specs
+- [Development Roadmap](DEVELOPMENT_ROADMAP.md) - Timeline and planning
+- [Phase Tracker](PHASE_TRACKER.md) - Development progress
+- [Status Tracker](STATUS_TRACKER.md) - Current status
+
+## 🔗 Resources
+
+### Related Projects
+- [Stacks Core](https://github.com/stacks-network/stacks-core) - Original Stacks implementation
+- [BitcoinZ](https://github.com/btcz/bitcoinz) - BitcoinZ blockchain
+- [Clarity](https://clarity-lang.org/) - Smart contract language
+
+### Documentation
+- [Stacks Documentation](https://docs.stacks.co/)
+- [BitcoinZ Documentation](https://getbtcz.com/)
+- [Rust Documentation](https://doc.rust-lang.org/)
+
+## 📞 Contact
+
+- **Project Lead**: [Your Name]
+- **Email**: [your-email@domain.com]
+- **Discord**: [Discord Server]
+- **Twitter**: [@btczs_official]
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## ⚠️ Disclaimer
+
+This project is in active development. Use at your own risk. Not suitable for production use until mainnet launch.
+
+---
+
+**Built with ❤️ for the BitcoinZ community**
