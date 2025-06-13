@@ -96,7 +96,6 @@ test-results/
 # Note: Source code directories are now included
 # bitcoinz-analysis/ - BitcoinZ analysis and integration code
 # btczs-core/ - Main BTCZS Layer 2 implementation
-# btczs-interfaces/ - TypeScript interfaces and client libraries
 
 # Compiled binaries
 *.exe
