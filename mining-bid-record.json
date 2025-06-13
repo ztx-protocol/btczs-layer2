@@ -1,0 +1,19 @@
+{
+  "mining_bid": {
+    "transaction_id": "946cecd5c443073f196ea8b303317a8bd194ea7269fe44f26227f961c11f3b5f",
+    "bid_amount": "0.005",
+    "bid_currency": "BTCZ",
+    "target_block_height": 1577899,
+    "btczs_reward_address": "SP07F9D4D53E0D0F27BF201997573230",
+    "bitcoinz_reward_address": "t107f9d4d53e0d0f27bf201997573230",
+    "pox_mining_address": "t1Hsc1LR8yKnbbe3twRp88p6vFfC5t7DLbs",
+    "timestamp": "2025-06-13T19:37:32Z",
+    "status": "submitted"
+  },
+  "expected_rewards": {
+    "mining_rights": "Eligible to mine BTCZS blocks",
+    "block_rewards": "1000-12500 BTCZS per block",
+    "reward_destination": "SP07F9D4D53E0D0F27BF201997573230",
+    "stacking_potential": "Can stack earned BTCZS to earn BTCZ"
+  }
+}
