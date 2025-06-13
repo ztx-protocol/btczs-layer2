@@ -1,0 +1,30 @@
+[node]
+working_dir = "btczs-test-data"
+rpc_bind = "127.0.0.1:20443"
+p2p_bind = "127.0.0.1:20444"
+data_dir = "btczs-test-data/chainstate"
+bootstrap_node = ""
+wait_time_for_microblocks = 10000
+mine_microblocks = true
+microblock_frequency = 30000
+max_microblocks = 1
+wait_time_for_blocks = 10000
+procname = "btczs-testnet"
+
+[burnchain]
+chain = "bitcoinz"
+mode = "mainnet"
+peer_host = "127.0.0.1"
+username = "any"
+password = "any"
+rpc_port = 1979
+peer_port = 1989
+burn_fee_cap = 20000
+satoshis_per_byte = 100
+
+[connection_options]
+read_timeout = 30
+write_timeout = 15
+idle_timeout = 15
+heartbeat = 3000
+timeout = 30
