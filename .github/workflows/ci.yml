@@ -33,20 +33,18 @@ jobs:
 
     - name: 📋 Check formatting
       run: |
-        if [ -d "btczs-core" ]; then
-          cd btczs-core
+        if [ -f "Cargo.toml" ]; then
           cargo fmt -- --check
         else
-          echo "⚠️ btczs-core directory not found, skipping format check"
+          echo "⚠️ Cargo.toml not found, skipping format check"
         fi
 
     - name: 🔍 Run clippy
       run: |
-        if [ -d "btczs-core" ]; then
-          cd btczs-core
+        if [ -f "Cargo.toml" ]; then
           cargo clippy -- -D warnings
         else
-          echo "⚠️ btczs-core directory not found, skipping clippy"
+          echo "⚠️ Cargo.toml not found, skipping clippy"
         fi
 
   # Job 2: Documentation Tests
@@ -112,24 +110,25 @@ jobs:
 
     - name: 🔨 Build BTCZS Core
       run: |
-        if [ -d "btczs-core" ]; then
-          cd btczs-core
+        if [ -f "Cargo.toml" ]; then
           cargo build --verbose
         else
-          echo "⚠️ btczs-core directory not found, creating placeholder"
-          mkdir -p btczs-core
-          echo "# BTCZS Core placeholder" > btczs-core/README.md
+          echo "⚠️ Cargo.toml not found, skipping build"
+          exit 1
         fi
 
     - name: 🧪 Run tests
       run: |
-        if [ -d "btczs-core" ] && [ -f "btczs-core/Cargo.toml" ]; then
-          cd btczs-core
+        if [ -f "Cargo.toml" ]; then
           cargo test --verbose
         else
           echo "⚠️ Running documentation tests instead"
-          chmod +x test-*.sh
-          ./run-all-tests.sh || echo "Tests completed with warnings"
+          chmod +x test-*.sh 2>/dev/null || true
+          if [ -f "run-all-tests.sh" ]; then
+            ./run-all-tests.sh || echo "Tests completed with warnings"
+          else
+            echo "✅ No additional tests to run"
+          fi
         fi
 
   # Job 4: Integration Tests
@@ -190,8 +189,7 @@ jobs:
 
     - name: 🔍 Run security audit
       run: |
-        if [ -d "btczs-core" ] && [ -f "btczs-core/Cargo.toml" ]; then
-          cd btczs-core
+        if [ -f "Cargo.toml" ]; then
           cargo install cargo-audit
           cargo audit
         else
