@@ -1,0 +1,20 @@
+🔐 BTCZS WALLET BACKUP INSTRUCTIONS
+
+CRITICAL: Keep this information secure and private!
+
+Private Key: 7a355a0cd6b0e14a940db0ddc55267355d558cdf818e357bffbdf4084fa6bef8
+BTCZS Address: SP07F9D4D53E0D0F27BF201997573230
+BitcoinZ Reward Address: t107f9d4d53e0d0f27bf201997573230
+
+BACKUP CHECKLIST:
+□ Store private key in secure location (password manager, hardware wallet, etc.)
+□ Write down private key on paper and store in safe location
+□ Test wallet recovery before using with large amounts
+□ Never share private key with anyone
+□ Keep multiple secure backups
+
+RECOVERY:
+To recover this wallet, you only need the private key.
+Import it into any compatible BTCZS wallet software.
+
+Created: Fri Jun 13 20:30:11 IST 2025

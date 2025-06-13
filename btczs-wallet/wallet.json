@@ -1,0 +1,20 @@
+{
+  "wallet_version": "1.0",
+  "network": "mainnet",
+  "created": "2025-06-13T19:30:11Z",
+  "accounts": {
+    "default": {
+      "private_key": "7a355a0cd6b0e14a940db0ddc55267355d558cdf818e357bffbdf4084fa6bef8",
+      "stacks_address": "SP07F9D4D53E0D0F27BF201997573230",
+      "bitcoinz_reward_address": "t107f9d4d53e0d0f27bf201997573230",
+      "account_type": "single_sig",
+      "derivation_path": "m/44'/5757'/0'/0/0"
+    }
+  },
+  "settings": {
+    "btczs_rpc_url": "http://localhost:20443",
+    "bitcoinz_rpc_url": "http://localhost:1979",
+    "auto_stacking": false,
+    "min_stacking_amount": 100000000000
+  }
+}
